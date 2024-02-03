@@ -1,5 +1,5 @@
 import DashboardBox from '@/components/DashboardBox';
-import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 
 const gridTemplateLargeScreens = `
  "a b c"
@@ -50,7 +50,7 @@ const gridTemplateSmallScreens = `
 
 const Dashboard: React.FC = () => { 
     const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)")
-    const {palette} = useTheme();
+    
     return(
         <Box 
             width="100%" 
