@@ -4,6 +4,7 @@ import React from 'react';
 
 const Row1: React.FC = () => {
     const {data} = useGetKpisQuery();
+    console.log("data:", data);
 
   return ( 
     <>
