@@ -15,7 +15,10 @@ const Navbar: React.FC = () => {
       color={palette.grey[300]}
       >{/* LEFT SIDE */}
       <FlexBetween gap="0.75rem">
-      <EscalatorWarningIcon />
+      <EscalatorWarningIcon sx= {{ fontSize: "28px"}} />
+      <Typography variant="h4" fontSize="16px">
+        FinanceBuddy
+      </Typography>
 
       </FlexBetween>
       </FlexBetween>
