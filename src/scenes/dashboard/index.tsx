@@ -1,9 +1,30 @@
 import { Box, useTheme } from '@mui/material';
-import React from 'react';
+
+const gridTemplate = `
+ "a b c"
+ "a b c"
+ "a b c"
+ "a b f"
+ "d e f"
+ "d e f"
+ "d h i"
+ "g h i"
+ "g h j"
+ "g h j"
+`
 
 const Dashboard: React.FC = () => { 
     const {palette} = useTheme();
-  return <Box color={palette.grey[300]}>Dashboard</Box>;
+  return(
+    <Box width="100%" height="100%" display="100%" gap="1.5rem" >
+        sx ={{
+            gridTemplateColumns: "repeat(3, minmax(370px, 1fr))",
+            gridTemplateRows: "repeat(10m minmax(60px, 1fr))",
+            gridTemplateAreas: gridTemplate,
+        }}
+    Dashboard
+    </Box>
+  );  
 };
 
 export default Dashboard;
