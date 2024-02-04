@@ -38,8 +38,17 @@ const Row1: React.FC = () => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" tickLine={false}/>
-          <YAxis />
+          <XAxis
+           dataKey="name"
+           tickLine={false}
+           style = {{ fontSize: "10px"}}
+           />
+          <YAxis
+           tickLine={false}
+           axisLine={{ strokeWidth: "0"}}
+           style = {{ fontSize: "10px"}}   
+           domain ={[8000, 23000]}       
+          />
           <Tooltip />
           <Area 
           type="monotone" 
