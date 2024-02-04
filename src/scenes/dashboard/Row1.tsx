@@ -2,7 +2,7 @@ import DashboardBox from '@/components/DashboardBox';
 import { useGetKpisQuery } from '@/state/api';
 import { useTheme } from '@mui/material';
 import React, { useMemo } from 'react';
-import {ResponsiveContainer, AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area} from "recharts";
+import {ResponsiveContainer, AreaChart, XAxis, YAxis, Tooltip, Area} from "recharts";
 
 
 const Row1: React.FC = () => {
@@ -37,7 +37,6 @@ const Row1: React.FC = () => {
             bottom: 0,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
           <XAxis
            dataKey="name"
            tickLine={false}
