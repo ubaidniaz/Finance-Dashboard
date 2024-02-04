@@ -13,6 +13,15 @@ export interface Month{
     nonOperationalExpenses: number;
     operationalExpenses: number;
 }
+export interface Day{
+    id: string;
+    month: string;
+
+    revenue: number;
+    expenses: number;
+    nonOperationalExpenses: number;
+    operationalExpenses: number;
+}
 
 export interface GetKpisResponse{
     id: string;
