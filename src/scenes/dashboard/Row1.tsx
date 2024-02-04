@@ -1,10 +1,12 @@
 import DashboardBox from '@/components/DashboardBox';
 import { useGetKpisQuery } from '@/state/api';
+import { useTheme } from '@mui/material';
 import React, { useMemo } from 'react';
 import {ResponsiveContainer, AreaChart, CartesianGrid, XAxis, YAxis, Tooltip, Area} from "recharts";
 
 
 const Row1: React.FC = () => {
+  const { palette } = useTheme();
     const {data} = useGetKpisQuery();
     console.log("data:", data);
     const revenueExpenses = useMemo(() => {
@@ -27,7 +29,7 @@ const Row1: React.FC = () => {
         <AreaChart
           width={500}
           height={400}
-          data={data}
+          data={revenueExpenses}
           margin={{
             top: 10,
             right: 30,
@@ -39,7 +41,12 @@ const Row1: React.FC = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+          <Area 
+          type="monotone" 
+          dataKey="revenue" 
+          stroke={palette.primary.main} 
+          fillOpacity={1}
+          fill="url(#colorRevenue" />
         </AreaChart>
       </ResponsiveContainer>
   </DashboardBox>
