@@ -44,7 +44,11 @@ const Row1: React.FC = () => {
                stopColor={palette.primary[300]}
                stopOpacity={0.5}
               />
-
+              <stop
+               offset="95%"
+               stopColor={palette.primary[300]}
+               stopOpacity={0}
+              />
             </linearGradient>
           </defs>
           <XAxis
