@@ -38,15 +38,26 @@ const Row1: React.FC = () => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name" tickLine={false}/>
           <YAxis />
           <Tooltip />
           <Area 
           type="monotone" 
-          dataKey="revenue" 
+          dataKey="revenue"
+          dot={true} 
           stroke={palette.primary.main} 
           fillOpacity={1}
-          fill="url(#colorRevenue" />
+          fill="url(#colorRevenue" 
+          />
+          <Area 
+          type="monotone" 
+          dataKey="expenses"
+          dot={true}  
+          stroke={palette.primary.main} 
+          fillOpacity={1}
+          fill="url(#colorExpenses" 
+          />
+          
         </AreaChart>
       </ResponsiveContainer>
   </DashboardBox>
