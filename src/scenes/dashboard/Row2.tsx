@@ -204,7 +204,7 @@ const Row2 = () => {
               tickFormatter={(v) => `$${v}`}
             />
             <ZAxis type="number" range={[20]} />
-            <Tooltip content={<CustomTooltip />} />;
+            <Tooltip content={<CustomTooltip />} />
             <Scatter
               name="Product Expense Ratio"
               data={productExpenseData}
