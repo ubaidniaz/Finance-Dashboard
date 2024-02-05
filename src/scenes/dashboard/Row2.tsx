@@ -31,6 +31,20 @@ const Row2 = () => {
   const { data: operationalData } = useGetKpisQuery();
   const { data: productData } = useGetProductsQuery();
 
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div style={{ backgroundColor: '#fff', padding: '10px', border: '1px solid #ccc' }}>
+          <p>{`Price: $${payload[0].value}`}</p>
+          <p>{`Expense: $${payload[1].value}`}</p>
+        </div>
+      );
+    }
+  
+    return null;
+  };
+  
+
   const operationalExpenses = useMemo(() => {
     return (
       operationalData &&
@@ -190,7 +204,7 @@ const Row2 = () => {
               tickFormatter={(v) => `$${v}`}
             />
             <ZAxis type="number" range={[20]} />
-            <Tooltip formatter={(v) => `$${v}`} />
+            <Tooltip content={<CustomTooltip />} />;
             <Scatter
               name="Product Expense Ratio"
               data={productExpenseData}
